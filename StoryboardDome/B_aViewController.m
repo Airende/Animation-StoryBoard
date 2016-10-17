@@ -25,7 +25,7 @@
 @implementation B_aViewController
 
 - (void)viewDidLoad{
-    [super viewDidLoad];//fdaf
+    [super viewDidLoad];
     _aaa = [[UITextField alloc] initWithFrame:CGRectMake(50, 70, 250, 30)];
     _aaa.placeholder = @"123";
     _aaa.borderStyle = UITextBorderStyleRoundedRect;

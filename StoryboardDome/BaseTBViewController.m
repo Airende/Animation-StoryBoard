@@ -29,6 +29,7 @@
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
     
+    //tabbar间切换动画
     //set up crossfade transition
     CATransition *transition = [CATransition animation];
 //    transition.duration = 3;

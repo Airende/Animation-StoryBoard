@@ -76,6 +76,7 @@
 		90293A111D59C4BB00C14290 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/A_b.storyboard; sourceTree = "<group>"; };
 		903BCB3C1D6D6CC300A1A0AF /* C_bViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C_bViewController.h; sourceTree = "<group>"; };
 		903BCB3D1D6D6CC300A1A0AF /* C_bViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C_bViewController.m; sourceTree = "<group>"; };
+		90778C041DB4C93000D34721 /* 说明.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "说明.h"; sourceTree = "<group>"; };
 		90804ED31DB4C2FD002540E9 /* C_aTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C_aTableViewController.h; sourceTree = "<group>"; };
 		90804ED41DB4C2FD002540E9 /* C_aTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C_aTableViewController.m; sourceTree = "<group>"; };
 		909ACB611D5DB4A300D106C0 /* B_aViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = B_aViewController.h; sourceTree = "<group>"; };
@@ -144,6 +145,7 @@
 			children = (
 				902939B91D58553300C14290 /* AppDelegate.h */,
 				902939BA1D58553300C14290 /* AppDelegate.m */,
+				90778C041DB4C93000D34721 /* 说明.h */,
 				909ACB541D5C754000D106C0 /* CustomUI */,
 				902939F51D58629B00C14290 /* base */,
 				902939EC1D5859B400C14290 /* A_aTableViewController.h */,
