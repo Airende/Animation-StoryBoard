@@ -12,11 +12,14 @@
 @interface C_cViewController ()
 @property (weak, nonatomic) IBOutlet UIView *layerView;
 @property (weak, nonatomic) IBOutlet UIButton *changeButton;
+@property (weak, nonatomic) IBOutlet UIView *huochaiView;
 
 @property (nonatomic, strong) CALayer * colorLayer;
 @property (nonatomic, strong) CALayer * imageLayer;
 
+@property (weak, nonatomic) IBOutlet UIView *transformView;
 
+@property (weak, nonatomic) IBOutlet UIView *littleView;
 
 @property (nonatomic, strong) UIImageView * imageView;
 @property (nonatomic, strong) NSArray * imageArray;
@@ -36,10 +39,85 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
-    _colorLayer = [CALayer layer];
-    _colorLayer.frame = CGRectMake(50, 10, 100, 100);
-    _colorLayer.backgroundColor = [UIColor purpleColor].CGColor;
+    //UIView的 Transform 的动画
+    [UIView animateWithDuration:2 animations:^{
+        
+        CGAffineTransform transform = CGAffineTransformIdentity;
+        //scale by 50%
+        transform = CGAffineTransformScale(transform, 0.5, 0.5);
+        //rotate by 30 degrees
+        transform = CGAffineTransformRotate(transform, M_PI / 180.0 * 30.0);
+        //translate by 200 points
+        transform = CGAffineTransformTranslate(transform, 200, 0);
+        //apply transform to layer
+        self.transformView.transform = transform;
+    }];
+
+//    [UIView animateWithDuration:2 animations:^{
+//        
+//        CGAffineTransform transform1 = CGAffineTransformIdentity;
+//        //scale by 50%
+//        transform1 = CGAffineTransformScale(transform1, 0.5, 0.5);
+//        //rotate by 30 degrees
+//        CGAffineTransform transform2 = CGAffineTransformIdentity;
+//        //scale by 50%
+//        transform2 = CGAffineTransformRotate(transform2, M_PI / 180.0 * 30.0);
+//        //translate by 200 points
+//
+//        self.littleView.transform = CGAffineTransformConcat(transform2,transform1);
+//        
+//    } completion:^(BOOL finished) {
+//        NSLog(@"动画完成");
+//    }];
     
+    
+    [UIView animateWithDuration:2 animations:^{
+        CATransform3D transform1 = CATransform3DMakeRotation(M_PI_2, 0, 1, 1);
+        CATransform3D transform2 = CATransform3DMakeScale(2, 2, 1);
+        CATransform3D transform3 = CATransform3DMakeTranslation(20, 20, 20);
+        CATransform3D transform4 = CATransform3DConcat(transform1, transform2);
+        CATransform3D transform = CATransform3DConcat(transform3, transform4);
+        
+        self.littleView.layer.transform = transform;
+    }];
+
+    //--------------------------------火柴人--------------------
+    UIBezierPath *path = [[UIBezierPath alloc] init];
+    [path moveToPoint:CGPointMake(175, 200)];
+    [path addArcWithCenter:CGPointMake(150, 200) radius:25 startAngle:0 endAngle:  2*M_PI clockwise:YES];
+    [path moveToPoint:CGPointMake(150, 225)];
+    [path addLineToPoint:CGPointMake(150, 275)];
+    [path addLineToPoint:CGPointMake(125, 325)];
+    [path moveToPoint:CGPointMake(150, 275)];
+    [path addLineToPoint:CGPointMake(175, 325)];
+    [path moveToPoint:CGPointMake(100, 250)];
+    [path addLineToPoint:CGPointMake(200, 250)];
+    //create shape layer
+    CAShapeLayer *shapeLayer1 = [CAShapeLayer layer];
+    shapeLayer1.strokeColor = [UIColor redColor].CGColor;
+    shapeLayer1.fillColor = [UIColor clearColor].CGColor;
+    shapeLayer1.lineWidth = 5;
+    shapeLayer1.lineJoin = kCALineJoinRound;
+    shapeLayer1.lineCap = kCALineCapRound;
+    shapeLayer1.path = path.CGPath;
+    //add it to our view
+    [self.view.layer addSublayer:shapeLayer1];
+    
+    //移动动画
+    CAKeyframeAnimation *animation1 = [CAKeyframeAnimation animation];
+    animation1.keyPath = @"position";     //动画操作对象
+    animation1.duration = 4;
+    animation1.repeatCount = 9;
+    animation1.path = path.CGPath;  //动画路线
+    animation1.rotationMode = kCAAnimationRotateAuto;  //方向
+    [_huochaiView.layer addAnimation:animation1 forKey:@"move1"];
+    
+    //-----------------------------------------------------------------
+    
+    
+    _colorLayer = [CALayer layer];
+    _colorLayer.frame = CGRectMake(70, 10, 50, 50);
+    _colorLayer.backgroundColor = [UIColor purpleColor].CGColor;
     [self.layerView.layer addSublayer:_colorLayer];
     
     /*
@@ -56,7 +134,7 @@
     [bezierPath moveToPoint:CGPointMake(0, 450)];
     [bezierPath addCurveToPoint:CGPointMake(370, 500) controlPoint1:CGPointMake(350, 200) controlPoint2:CGPointMake(300, 600)]; //一个曲线
     
-    //路径样式
+    //路径样式  注释：不显示路径
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
     shapeLayer.path = bezierPath.CGPath;
     shapeLayer.fillColor = [UIColor clearColor].CGColor; //填充色<默认黑色>
@@ -88,9 +166,10 @@
     basicAnimation.duration = 4;
     basicAnimation.repeatCount = 9;
     basicAnimation.toValue = (__bridge id _Nullable)([UIColor redColor].CGColor);
-    basicAnimation.delegate = self;
+//    basicAnimation.delegate = self;
     [_imageLayer addAnimation:basicAnimation forKey:nil];
     
+    //动画组
     CAAnimationGroup *animationGroup = [CAAnimationGroup animation];
     animationGroup.animations = @[animation,basicAnimation];
     animationGroup.duration = 4;
@@ -109,7 +188,7 @@
                         [UIImage imageNamed:@"A_4"],
                         [UIImage imageNamed:@"A_5"]];
     
-    //复杂动画，缓冲
+    //复杂动画，缓冲球
     UIImage *ballImage = [UIImage imageNamed:@"C_1"];
     self.ballView = [[UIImageView alloc] initWithImage:ballImage];
     self.ballView.frame = CGRectMake(350, 64, 50, 50);
@@ -131,20 +210,40 @@
     
     CABasicAnimation *animation = [CABasicAnimation animation];
     animation.keyPath = @"backgroundColor";
-//    animation.fillMode = kCAFillModeForwards;
+    //保持最终状态
+    animation.fillMode = kCAFillModeForwards;
+    animation.removedOnCompletion = NO;
+    
+    animation.duration = 3;
     animation.toValue = (__bridge id _Nullable)(color.CGColor);
-    animation.delegate = self;
+//    animation.delegate = self;
     [_colorLayer addAnimation:animation forKey:nil];
     
-    //动画2： 过渡
+    //动画2： 过渡(图片切换)
     CATransition *transition = [CATransition animation];
-    transition.type = kCATransitionFade;
-    [self.imageView.layer addAnimation:transition forKey:nil];
+    
+    /* 主要动画效果
+     @"cube"：方块 @"moveIn"：移进 @"reveal"：移出 @"fade"(default)：渐变 @"pageCurl"：翻页 @"pageUnCurl"：盖页 @"suckEffect"：左上角收起 @"rippleEffect":水纹 @"oglFlip":翻转
+     */
+    transition.type = kCATransitionMoveIn;
+    
+    transition.duration = 2;
+    //时间函数
+    transition.timingFunction =  [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];//动画的开始与结束的快慢
+    
+    transition.subtype = @"fromRight";// 动画方向 -> 需要动画效果支持的
+//    transition.startProgress = 0.4;
+//    transition.endProgress = 0.8;
+    
+    
     UIImage *image = self.imageView.image;
     NSUInteger index = [self.imageArray indexOfObject:image];
     index = (index + 1) % [self.imageArray count];
     self.imageView.image = self.imageArray[index];
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     
+    [self.imageView.layer addAnimation:transition forKey:nil];
+
     //动画3：移除移动动画
 //    [_imageLayer removeAllAnimations];
     
@@ -182,8 +281,8 @@ float bounceEaseOut(float t)
 
 - (void)animationBall{
     
-    /*   方案二   利用数学计算
-     
+//       方案二   利用数学计算
+    
     NSValue *fromValue = [NSValue valueWithCGPoint:CGPointMake(375, 32)];
     NSValue *toValue = [NSValue valueWithCGPoint:CGPointMake(375, 268)];
     CFTimeInterval duration = 1.0;
@@ -196,32 +295,32 @@ float bounceEaseOut(float t)
         [frames addObject:[self interpolateFromValue:fromValue toValue:toValue time:time]];
     }
      
-    */
     
     
-    /*方案一、二
+    
+    //方案一、二
     CAKeyframeAnimation *keyAnimation = [CAKeyframeAnimation animation];
     keyAnimation.keyPath = @"position";
     keyAnimation.duration = 1;
-    keyAnimation.delegate = self;
-    */
+//    keyAnimation.delegate = self;
+    
     
     
     //*方案三  时间帧
-    self.duration = 1.0;
-    self.timeOffset = 0.0;
-    self.fromValue = [NSValue valueWithCGPoint:CGPointMake(375, 32)];
-    self.toValue = [NSValue valueWithCGPoint:CGPointMake(375, 268)];
-    [self.timer invalidate];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1/60.0 target:self selector:@selector(step:) userInfo:nil repeats:YES];
+//    self.duration = 1.0;
+//    self.timeOffset = 0.0;
+//    self.fromValue = [NSValue valueWithCGPoint:CGPointMake(375, 32)];
+//    self.toValue = [NSValue valueWithCGPoint:CGPointMake(375, 268)];
+//    [self.timer invalidate];
+//    self.timer = [NSTimer scheduledTimerWithTimeInterval:1/60.0 target:self selector:@selector(step:) userInfo:nil repeats:YES];
     //*/
     
     
-    /* 方案二
+    // 方案二
      
     keyAnimation.values = frames;
      
-     */
+    
     
     /*  方案一   简单除暴
      
@@ -250,9 +349,9 @@ float bounceEaseOut(float t)
     
     
     self.ballView.layer.position = CGPointMake(375, 268);
-    /*方案一、二
+    //方案一、二
     [self.ballView.layer addAnimation:keyAnimation forKey:nil];
-     */
+    
 }
 
 - (id)interpolateFromValue:(id)fromValue toValue:(id)toValue time:(float)time{
