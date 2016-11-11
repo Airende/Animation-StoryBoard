@@ -225,7 +225,7 @@
     /* 主要动画效果
      @"cube"：方块 @"moveIn"：移进 @"reveal"：移出 @"fade"(default)：渐变 @"pageCurl"：翻页 @"pageUnCurl"：盖页 @"suckEffect"：左上角收起 @"rippleEffect":水纹 @"oglFlip":翻转
      */
-    transition.type = kCATransitionMoveIn;
+    transition.type = kCATransitionReveal;
     
     transition.duration = 2;
     //时间函数

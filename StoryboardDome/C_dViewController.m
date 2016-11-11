@@ -40,6 +40,9 @@
     //图片动画
     [self initView];
     
+    //path 动画
+    [self pathCoerAnimation];
+    
 }
 ///-------------------------------| 创建播放按钮动画
 - (void)creatPlayButton{
@@ -301,10 +304,57 @@
 }
 ///------------------------------- | 图片动画 🔚
 
+- (void)pathCoerAnimation{
+    
+    
+    UIBezierPath *path1 = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(100, 200, 50, 50) cornerRadius:25.0];
+    
+    CAShapeLayer *pathLayer1 = [CAShapeLayer layer];
+    pathLayer1.path = path1.CGPath;
+    //pathLayer.fillColor = [UIColor clearColor].CGColor;
+    pathLayer1.strokeColor = [UIColor redColor].CGColor;
+    pathLayer1.lineWidth = 3;
+    
+    
+    UIBezierPath *path2 = [UIBezierPath bezierPath];
+    [path2 moveToPoint:CGPointMake(250, 250)];
+    [path2 addLineToPoint:CGPointMake(300, 250)];
+    [path2 addLineToPoint:CGPointMake(300, 300)];
+    [path2 addLineToPoint:CGPointMake(250, 300)];
+    //[path2 addLineToPoint:CGPointMake(250, 250)];
+    [path2 closePath];
+    
+    CAShapeLayer *pathLayer2 = [CAShapeLayer layer];
+    pathLayer2.path = path1.CGPath;
+    //pathLayer.fillColor = [UIColor clearColor].CGColor;
+    pathLayer2.strokeColor = [UIColor blueColor].CGColor;
+    pathLayer2.lineWidth = 5;
+
+    
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"path"];
+    animation.removedOnCompletion = NO;
+    animation.fillMode=kCAFillModeForwards;
+    animation.duration = 10;
+    animation.repeatCount = 1000;
+    animation.autoreverses = YES;
+    animation.fromValue = (__bridge id _Nullable)(path1.CGPath);
+    animation.toValue = (__bridge id _Nullable)(path2.CGPath);
+    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    
+    
+    [pathLayer2 addAnimation:animation forKey:nil];
+    [self.view.layer addSublayer:pathLayer2];
+
+}
+
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 /*
 #pragma mark - Navigation
