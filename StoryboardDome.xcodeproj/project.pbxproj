@@ -20,6 +20,8 @@
 		902939F81D5862BD00C14290 /* BaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 902939F71D5862BD00C14290 /* BaseNavViewController.m */; };
 		902939FB1D58639400C14290 /* BaseTBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 902939FA1D58639400C14290 /* BaseTBViewController.m */; };
 		90293A121D59C4BB00C14290 /* A_b.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90293A101D59C4BB00C14290 /* A_b.storyboard */; };
+		9033C8F41DDC2B5D000666AB /* BlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9033C8F31DDC2B5D000666AB /* BlockView.m */; };
+		9033C8F61DDC2B76000666AB /* BlockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9033C8F51DDC2B76000666AB /* BlockView.xib */; };
 		903BCB3E1D6D6CC300A1A0AF /* C_bViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 903BCB3D1D6D6CC300A1A0AF /* C_bViewController.m */; };
 		905911BB1DC1991D001622EB /* C_dViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 905911BA1DC1991D001622EB /* C_dViewController.m */; };
 		90804ED51DB4C2FD002540E9 /* C_aTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90804ED41DB4C2FD002540E9 /* C_aTableViewController.m */; };
@@ -79,6 +81,10 @@
 		902939F91D58639400C14290 /* BaseTBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTBViewController.h; sourceTree = "<group>"; };
 		902939FA1D58639400C14290 /* BaseTBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTBViewController.m; sourceTree = "<group>"; };
 		90293A111D59C4BB00C14290 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/A_b.storyboard; sourceTree = "<group>"; };
+		9033C8EE1DDC035F000666AB /* A_📖.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "A_📖.h"; sourceTree = "<group>"; };
+		9033C8F21DDC2B5D000666AB /* BlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockView.h; sourceTree = "<group>"; };
+		9033C8F31DDC2B5D000666AB /* BlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockView.m; sourceTree = "<group>"; };
+		9033C8F51DDC2B76000666AB /* BlockView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlockView.xib; sourceTree = "<group>"; };
 		903BCB3C1D6D6CC300A1A0AF /* C_bViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C_bViewController.h; sourceTree = "<group>"; };
 		903BCB3D1D6D6CC300A1A0AF /* C_bViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C_bViewController.m; sourceTree = "<group>"; };
 		905911B91DC1991D001622EB /* C_dViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C_dViewController.h; sourceTree = "<group>"; };
@@ -161,31 +167,12 @@
 			children = (
 				902939B91D58553300C14290 /* AppDelegate.h */,
 				902939BA1D58553300C14290 /* AppDelegate.m */,
+				902939BF1D58553300C14290 /* Main.storyboard */,
 				90778C041DB4C93000D34721 /* 说明.h */,
 				909ACB541D5C754000D106C0 /* CustomUI */,
 				902939F51D58629B00C14290 /* base */,
-				902939EC1D5859B400C14290 /* A_aTableViewController.h */,
-				902939ED1D5859B400C14290 /* A_aTableViewController.m */,
-				902939EF1D585EDA00C14290 /* A_bViewController.h */,
-				902939F01D585EDA00C14290 /* A_bViewController.m */,
-				902939F21D585EE700C14290 /* A_cViewController.h */,
-				902939F31D585EE700C14290 /* A_cViewController.m */,
-				909ACB611D5DB4A300D106C0 /* B_aViewController.h */,
-				909ACB621D5DB4A300D106C0 /* B_aViewController.m */,
-				90804ED31DB4C2FD002540E9 /* C_aTableViewController.h */,
-				90804ED41DB4C2FD002540E9 /* C_aTableViewController.m */,
-				903BCB3C1D6D6CC300A1A0AF /* C_bViewController.h */,
-				903BCB3D1D6D6CC300A1A0AF /* C_bViewController.m */,
-				909EDCB81D6D8F21001A846B /* C_cViewController.h */,
-				909EDCB91D6D8F21001A846B /* C_cViewController.m */,
-				905911B91DC1991D001622EB /* C_dViewController.h */,
-				905911BA1DC1991D001622EB /* C_dViewController.m */,
-				909C14B31DC6E812004E9161 /* D_aViewController.h */,
-				909C14B41DC6E812004E9161 /* D_aViewController.m */,
-				909C14BC1DC6EFA8004E9161 /* D_bViewController.h */,
-				909C14BD1DC6EFA8004E9161 /* D_bViewController.m */,
-				902939BF1D58553300C14290 /* Main.storyboard */,
-				90293A101D59C4BB00C14290 /* A_b.storyboard */,
+				9033C8F01DDC04DB000666AB /* View */,
+				9033C8EF1DDC04B3000666AB /* ViewController */,
 				902939C21D58553300C14290 /* Assets.xcassets */,
 				902939C41D58553300C14290 /* LaunchScreen.storyboard */,
 				902939C71D58553300C14290 /* Info.plist */,
@@ -231,6 +218,85 @@
 				909C14B71DC6ED94004E9161 /* BaseWKWebViewViewController.m */,
 			);
 			name = base;
+			sourceTree = "<group>";
+		};
+		9033C8E81DDBFB81000666AB /* A */ = {
+			isa = PBXGroup;
+			children = (
+				9033C8EE1DDC035F000666AB /* A_📖.h */,
+				902939EC1D5859B400C14290 /* A_aTableViewController.h */,
+				902939ED1D5859B400C14290 /* A_aTableViewController.m */,
+				902939EF1D585EDA00C14290 /* A_bViewController.h */,
+				902939F01D585EDA00C14290 /* A_bViewController.m */,
+				902939F21D585EE700C14290 /* A_cViewController.h */,
+				902939F31D585EE700C14290 /* A_cViewController.m */,
+				90293A101D59C4BB00C14290 /* A_b.storyboard */,
+			);
+			name = A;
+			sourceTree = "<group>";
+		};
+		9033C8E91DDBFB9F000666AB /* B */ = {
+			isa = PBXGroup;
+			children = (
+				909ACB611D5DB4A300D106C0 /* B_aViewController.h */,
+				909ACB621D5DB4A300D106C0 /* B_aViewController.m */,
+			);
+			name = B;
+			sourceTree = "<group>";
+		};
+		9033C8EA1DDBFBA9000666AB /* C */ = {
+			isa = PBXGroup;
+			children = (
+				90804ED31DB4C2FD002540E9 /* C_aTableViewController.h */,
+				90804ED41DB4C2FD002540E9 /* C_aTableViewController.m */,
+				903BCB3C1D6D6CC300A1A0AF /* C_bViewController.h */,
+				903BCB3D1D6D6CC300A1A0AF /* C_bViewController.m */,
+				909EDCB81D6D8F21001A846B /* C_cViewController.h */,
+				909EDCB91D6D8F21001A846B /* C_cViewController.m */,
+				905911B91DC1991D001622EB /* C_dViewController.h */,
+				905911BA1DC1991D001622EB /* C_dViewController.m */,
+			);
+			name = C;
+			sourceTree = "<group>";
+		};
+		9033C8EB1DDBFBBD000666AB /* D */ = {
+			isa = PBXGroup;
+			children = (
+				909C14B31DC6E812004E9161 /* D_aViewController.h */,
+				909C14B41DC6E812004E9161 /* D_aViewController.m */,
+				909C14BC1DC6EFA8004E9161 /* D_bViewController.h */,
+				909C14BD1DC6EFA8004E9161 /* D_bViewController.m */,
+			);
+			name = D;
+			sourceTree = "<group>";
+		};
+		9033C8EF1DDC04B3000666AB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9033C8E81DDBFB81000666AB /* A */,
+				9033C8E91DDBFB9F000666AB /* B */,
+				9033C8EA1DDBFBA9000666AB /* C */,
+				9033C8EB1DDBFBBD000666AB /* D */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		9033C8F01DDC04DB000666AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9033C8F11DDC2B2A000666AB /* A_bView */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9033C8F11DDC2B2A000666AB /* A_bView */ = {
+			isa = PBXGroup;
+			children = (
+				9033C8F21DDC2B5D000666AB /* BlockView.h */,
+				9033C8F31DDC2B5D000666AB /* BlockView.m */,
+				9033C8F51DDC2B76000666AB /* BlockView.xib */,
+			);
+			name = A_bView;
 			sourceTree = "<group>";
 		};
 		909ACB541D5C754000D106C0 /* CustomUI */ = {
@@ -365,6 +431,7 @@
 				902939C61D58553300C14290 /* LaunchScreen.storyboard in Resources */,
 				902939C31D58553300C14290 /* Assets.xcassets in Resources */,
 				902939C11D58553300C14290 /* Main.storyboard in Resources */,
+				9033C8F61DDC2B76000666AB /* BlockView.xib in Resources */,
 				90293A121D59C4BB00C14290 /* A_b.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +460,7 @@
 				902939F41D585EE700C14290 /* A_cViewController.m in Sources */,
 				909EDCBA1D6D8F21001A846B /* C_cViewController.m in Sources */,
 				902939FB1D58639400C14290 /* BaseTBViewController.m in Sources */,
+				9033C8F41DDC2B5D000666AB /* BlockView.m in Sources */,
 				90DFC9631D61B37100C23540 /* WMLoginButton.m in Sources */,
 				905911BB1DC1991D001622EB /* C_dViewController.m in Sources */,
 				902939BB1D58553300C14290 /* AppDelegate.m in Sources */,

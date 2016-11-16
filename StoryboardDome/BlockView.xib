@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BlockView">
+            <rect key="frame" x="0.0" y="0.0" width="281" height="102"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自定义View上button方法代理" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJU-jL-OWg">
+                    <rect key="frame" x="10" y="10" width="261" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="2OO-pl-nrP"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vG0-7F-ItP">
+                    <rect key="frame" x="20" y="45" width="100" height="30"/>
+                    <color key="backgroundColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="UEt-0H-uoC"/>
+                    </constraints>
+                    <state key="normal" title="Delegate">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="delegateButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="J2t-qe-lRA"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4GX-ik-iHQ">
+                    <rect key="frame" x="161" y="45" width="100" height="30"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.32549019610000002" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="Y5j-Xv-lcc"/>
+                    </constraints>
+                    <state key="normal" title="Block">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="blockButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="LtK-w1-X7i"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="uJU-jL-OWg" secondAttribute="trailing" constant="10" id="9nA-WO-pqP"/>
+                <constraint firstItem="uJU-jL-OWg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="AGH-4I-ev8"/>
+                <constraint firstItem="vG0-7F-ItP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="D08-fP-2nM"/>
+                <constraint firstItem="uJU-jL-OWg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="b3D-rk-x3C"/>
+                <constraint firstAttribute="trailing" secondItem="4GX-ik-iHQ" secondAttribute="trailing" constant="20" id="hfk-e2-ZOE"/>
+                <constraint firstItem="vG0-7F-ItP" firstAttribute="top" secondItem="uJU-jL-OWg" secondAttribute="bottom" constant="15" id="vBu-dd-vsR"/>
+                <constraint firstItem="4GX-ik-iHQ" firstAttribute="top" secondItem="uJU-jL-OWg" secondAttribute="bottom" constant="15" id="wI4-oP-hJb"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="blockBtn" destination="4GX-ik-iHQ" id="L9v-dW-oMD"/>
+                <outlet property="delegateBtn" destination="vG0-7F-ItP" id="Fdx-22-O5q"/>
+            </connections>
+            <point key="canvasLocation" x="-50" y="363"/>
+        </view>
+    </objects>
+</document>

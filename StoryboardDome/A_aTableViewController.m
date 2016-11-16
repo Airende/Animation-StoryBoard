@@ -17,14 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//     Uncomment the following line to preserve selection between presentations.
-//     self.clearsSelectionOnViewWillAppear = NO;
-    
-//     Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-//     self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    self.tableView.rowHeight = 100;
     self.tableView.tableFooterView = [[UIView alloc] init];
-    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,14 +37,24 @@
     return 5;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        return 105;
+    }
+    
+    return 44;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
     }
     
     if (indexPath.row == 0) {
-        cell.textLabel.text = @"资讯列表";
+        cell.textLabel.text = @"Block的使用";
+        cell.detailTextLabel.numberOfLines = 0;
+        cell.detailTextLabel.text = @"1.作为一个本地的变量 \n2.作为@property \n3.作为方法的参数 \n4.作为方法的参数是被调用";
     }else if (indexPath.row == 1){
         cell.textLabel.text = @"资讯详情";
     }

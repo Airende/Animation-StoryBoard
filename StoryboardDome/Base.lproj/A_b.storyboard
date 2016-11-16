@@ -1,30 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--b View Controller-->
+        <!--Block的使用-->
         <scene sceneID="ib3-3g-lX4">
             <objects>
-                <viewController restorationIdentifier="A_bViewController" storyboardIdentifier="A_bViewController" hidesBottomBarWhenPushed="YES" id="fXA-sD-EDu" customClass="A_bViewController" sceneMemberID="viewController">
+                <viewController restorationIdentifier="A_bViewController" storyboardIdentifier="A_bViewController" title="Block的使用" hidesBottomBarWhenPushed="YES" id="fXA-sD-EDu" customClass="A_bViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kGp-wh-F3m"/>
                         <viewControllerLayoutGuide type="bottom" id="8yM-2J-oDf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gJn-OE-O6u">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRP-ja-VRc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuI-1c-s8o">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35O-LT-lE6">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.32549019610000002" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="64" id="Aww-7f-K4o"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="35O-LT-lE6" firstAttribute="leading" secondItem="fuI-1c-s8o" secondAttribute="leading" id="HLL-qO-yf4"/>
+                                            <constraint firstItem="35O-LT-lE6" firstAttribute="top" secondItem="fuI-1c-s8o" secondAttribute="top" id="XbD-Cu-RjL"/>
+                                            <constraint firstAttribute="height" constant="1000" id="mtH-bo-z6F"/>
+                                            <constraint firstAttribute="trailing" secondItem="35O-LT-lE6" secondAttribute="trailing" id="oZ6-Nl-lqj"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fuI-1c-s8o" firstAttribute="centerX" secondItem="TRP-ja-VRc" secondAttribute="centerX" id="6b7-Fl-n9r"/>
+                                    <constraint firstAttribute="trailing" secondItem="fuI-1c-s8o" secondAttribute="trailing" id="Qtm-54-ih8"/>
+                                    <constraint firstItem="fuI-1c-s8o" firstAttribute="top" secondItem="TRP-ja-VRc" secondAttribute="top" id="UXw-Fo-LUY"/>
+                                    <constraint firstItem="fuI-1c-s8o" firstAttribute="leading" secondItem="TRP-ja-VRc" secondAttribute="leading" id="iQy-YL-zAL"/>
+                                    <constraint firstAttribute="bottom" secondItem="fuI-1c-s8o" secondAttribute="bottom" id="sdi-Rc-o26"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="TRP-ja-VRc" secondAttribute="bottom" id="2jj-sE-0NG"/>
+                            <constraint firstItem="TRP-ja-VRc" firstAttribute="leading" secondItem="gJn-OE-O6u" secondAttribute="leading" id="F0b-Zh-Q1d"/>
+                            <constraint firstItem="TRP-ja-VRc" firstAttribute="top" secondItem="gJn-OE-O6u" secondAttribute="top" id="kY1-lH-uKQ"/>
+                            <constraint firstAttribute="trailing" secondItem="TRP-ja-VRc" secondAttribute="trailing" id="u7S-7q-bpH"/>
+                        </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="contentView" destination="fuI-1c-s8o" id="XHk-Kr-zbP"/>
+                        <outlet property="scrollView" destination="TRP-ja-VRc" id="sOV-mS-wN0"/>
+                        <outlet property="viewHeight" destination="mtH-bo-z6F" id="JTE-vD-XxZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="APS-eP-WKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2314" y="-2033"/>
+            <point key="canvasLocation" x="2312.8000000000002" y="-2033.433283358321"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="46a-2J-poJ">
+            <objects>
+                <viewController id="zkI-BE-RxI" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Woe-7j-cSt"/>
+                        <viewControllerLayoutGuide type="bottom" id="5yU-Os-bCV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7AC-q5-neF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QNj-JI-yRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
 </document>

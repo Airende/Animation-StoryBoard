@@ -287,6 +287,7 @@
     }
 }
 
+//当关闭WebView时调用
 #if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_9_0
 - (void)webViewDidClose:(WKWebView *)webView {
     NSLog(@"%s", __FUNCTION__);
