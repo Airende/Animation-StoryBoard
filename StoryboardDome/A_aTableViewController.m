@@ -38,9 +38,9 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0 && indexPath.row == 0) {
-        return 105;
-    }
+//    if (indexPath.section == 0 && indexPath.row == 0) {
+//        return 44;
+//    }
     
     return 44;
 }
@@ -48,13 +48,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
     }
     
     if (indexPath.row == 0) {
         cell.textLabel.text = @"Block的使用";
         cell.detailTextLabel.numberOfLines = 0;
-        cell.detailTextLabel.text = @"1.作为一个本地的变量 \n2.作为@property \n3.作为方法的参数 \n4.作为方法的参数是被调用";
+        cell.detailTextLabel.text = @"茅厕顿开的那种";
     }else if (indexPath.row == 1){
         cell.textLabel.text = @"资讯详情";
     }
@@ -67,7 +67,7 @@
     if (indexPath.row == 0) {
         [self performSegueWithIdentifier:@"toList" sender:nil];
     }else if (indexPath.row == 1){
-        [self performSegueWithIdentifier:@"toDetail" sender:nil];
+        
     }
 }
 

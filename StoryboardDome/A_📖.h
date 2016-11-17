@@ -20,6 +20,9 @@ A_b  Block的使用
 
     2.自定义视图BlockView
         1> xib上约束的scrollView上面添加子视图frame存在问题！？
+            UIScrollView 约束的问题 X
+            通过延迟方法 dispatch_after 加载 √
+
 
     3.自定义视图通过 Delegate 和 Block 传出对比
         - Delegate                           - Block
@@ -31,11 +34,65 @@ A_b  Block的使用
 
     4.block 的基本创建和使用
 
---- 11.XX
-
+--- 11.17
+A_c  自写Block参数方法的使用
     1.block作为入参的使用
+
+        首先执行的是方法自身里面的代码，然后执行block作为参数书写在里面的方法。
+
+        [UIView animateWithDuration:1 animation:^{
+            //动画代码
+            //…
+        }];
+
+        1.先执行方法中的 延迟1s操作。
+        2.然后执行block动画里面的代码。
+
+        一个方法分两个时段执行。
+
+        例如AFN中请求的方法
+
+        执行步骤
+        1.执行到方法时立马发起请求
+        2.得到请求结果后，根据情况调用成功的block或者是失败的block。
+        3.执行block中的代码
+
+        有点像代理，当某项得到结果后执行block中的代码。
+
+        ⬆️-———以上都是基于 其他写好的 来理解的 ———-
+        ⬇️———-如何自己 写个 block参数的方法呢-————
+
+        这里写一个带有2个block参数的方法
+        实现功能：计算前两个参数的和通过和的值调用不同的block函数。
+
+        1.将block匿名函数定义一个名字
+        typedef void(^TenAfterBlock)();
+        typedef void(^TenBeforeBlock)();
+
+        2.在.h中书写方法
+        - (void)sumNumber:(CGFloat)num1 andNum2:(CGFloat)num2 tenBefore:(TenBeforeBlock)block1 tenAfter:(TenAfterBlock)block2;
+
+        3.在.m中实现方法
+        - (void)sumNumber:(CGFloat)num1 andNum2:(CGFloat)num2 tenBefore:(TenBeforeBlock)block1 tenAfter:(TenAfterBlock)block2{
+            
+            CGFloat sum = num1 + num2;
+            
+            if (sum <= 10) {
+                block1();
+            }else{
+                block2();
+            }
+        }
+
+        4.b_c中调用方法。
+        [vc sumNumber:5.7 andNum2:4.9 tenBefore:^{
+            NSLog(@"前面两个值加起来 <= 10");
+        } tenAfter:^{
+            NSLog(@" > 10 ");
+        }];
+
     2.block使用注意
-    3.使用block的第三方内部代码熟悉
+    3.block实现原理：不是现在看的东西
 
 
 

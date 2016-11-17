@@ -26,8 +26,8 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    _aaa = [[UITextField alloc] initWithFrame:CGRectMake(50, 70, 250, 30)];
-    _aaa.placeholder = @"123";
+    _aaa = [[UITextField alloc] initWithFrame:CGRectMake(20, 74, W-40, 30)];
+    _aaa.placeholder = @"请输入开启密码";
     _aaa.borderStyle = UITextBorderStyleRoundedRect;
     [self.view addSubview:_aaa];
     
@@ -37,7 +37,7 @@
     [_blueButton addTarget:self action:@selector(wmBlueButton) forControlEvents:UIControlEventTouchUpInside];
     
     //手写创建------------------------------------------------
-    _button1 = [[WMRedButton alloc] initWithFrame:CGRectMake(100, 100, 100, 50)];
+    _button1 = [[WMRedButton alloc] initWithFrame:CGRectMake(30, 110, 160, 40)];
     [_button1 wmButtonWithRounded:4];
     [_button1 wmButtonWithTitle:@"点击"];
     _button1.valid = NO;
@@ -45,7 +45,7 @@
     [self.view addSubview:_button1];
     
     //手写
-    _button2 = [[WMWhiteButton alloc] initWithFrame:CGRectMake(50, 250, 100, 50)];
+    _button2 = [[WMWhiteButton alloc] initWithFrame:CGRectMake(230, 110, 160, 40)];
     [_button2 wmButtonWithTitle:@"黑白"];
     _button2.valid = NO;
     [_button2 addTarget:self action:@selector(clickWhiteButton) forControlEvents:UIControlEventTouchUpInside];

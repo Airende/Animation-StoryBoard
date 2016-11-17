@@ -61,6 +61,12 @@
 - (void)awakeFromNib{
     [super awakeFromNib];
     // Initialization code
+
+}
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    NSLog(@"bView layoutSubviews=%@",NSStringFromCGRect(self.frame));
+    //self.frame = self.frame;
 }
 
 /*

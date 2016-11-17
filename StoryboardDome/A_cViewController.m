@@ -7,6 +7,7 @@
 //
 
 #import "A_cViewController.h"
+#import "A_bViewController.h"
 
 @interface A_cViewController ()
 
@@ -17,6 +18,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    A_bViewController *vc = [[A_bViewController alloc] init];
+    
+   [vc logStrAfterLogOther:^(NSString *str) {
+       NSLog(@"这里拿到的str是 %@ ，在外部",str);
+   }];
+    
+    [vc sumNumber:5.7 andNum2:4.9 tenBefore:^{
+        NSLog(@"前面两个值加起来 <= 10");
+    } tenAfter:^{
+        NSLog(@" > 10 ");
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {

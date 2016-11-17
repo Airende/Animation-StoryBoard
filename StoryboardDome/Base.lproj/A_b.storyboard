@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRP-ja-VRc">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRP-ja-VRc">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuI-1c-s8o">
@@ -55,10 +55,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="TRP-ja-VRc" secondAttribute="bottom" id="2jj-sE-0NG"/>
-                            <constraint firstItem="TRP-ja-VRc" firstAttribute="leading" secondItem="gJn-OE-O6u" secondAttribute="leading" id="F0b-Zh-Q1d"/>
-                            <constraint firstItem="TRP-ja-VRc" firstAttribute="top" secondItem="gJn-OE-O6u" secondAttribute="top" id="kY1-lH-uKQ"/>
-                            <constraint firstAttribute="trailing" secondItem="TRP-ja-VRc" secondAttribute="trailing" id="u7S-7q-bpH"/>
+                            <constraint firstItem="TRP-ja-VRc" firstAttribute="leading" secondItem="gJn-OE-O6u" secondAttribute="leading" id="Cn3-bP-Pqf"/>
+                            <constraint firstAttribute="trailing" secondItem="TRP-ja-VRc" secondAttribute="trailing" id="Irn-Wl-C00"/>
+                            <constraint firstAttribute="bottom" secondItem="TRP-ja-VRc" secondAttribute="bottom" id="hX2-Zw-nUc"/>
+                            <constraint firstItem="TRP-ja-VRc" firstAttribute="top" secondItem="kGp-wh-F3m" secondAttribute="bottom" constant="-64" id="wyw-1C-UYP"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -72,23 +72,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="APS-eP-WKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2312.8000000000002" y="-2033.433283358321"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="46a-2J-poJ">
-            <objects>
-                <viewController id="zkI-BE-RxI" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Woe-7j-cSt"/>
-                        <viewControllerLayoutGuide type="bottom" id="5yU-Os-bCV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7AC-q5-neF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QNj-JI-yRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
 </document>

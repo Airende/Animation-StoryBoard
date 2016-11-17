@@ -55,8 +55,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztZ-jj-RiI" customClass="WMBlueButton">
-                                <rect key="frame" x="150" y="160" width="300" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztZ-jj-RiI" customClass="WMBlueButton">
+                                <rect key="frame" x="37" y="164" width="300" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="0dd-jQ-cVc"/>
                                     <constraint firstAttribute="height" constant="50" id="FLN-X3-KLa"/>
@@ -68,8 +68,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ztZ-jj-RiI" firstAttribute="centerX" secondItem="c57-kk-OwK" secondAttribute="centerX" id="LD5-49-FeI"/>
-                            <constraint firstItem="ztZ-jj-RiI" firstAttribute="top" secondItem="6EV-rT-IwF" secondAttribute="bottom" constant="96" id="pda-Lr-YZW"/>
+                            <constraint firstItem="ztZ-jj-RiI" firstAttribute="centerX" secondItem="c57-kk-OwK" secondAttribute="centerX" constant="-0.5" id="LD5-49-FeI"/>
+                            <constraint firstItem="ztZ-jj-RiI" firstAttribute="top" secondItem="6EV-rT-IwF" secondAttribute="bottom" constant="100" id="pda-Lr-YZW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="自定义按钮" id="Sme-yS-d7K"/>

@@ -51,12 +51,12 @@
     
     CGFloat X = arc4random()%100+1;
     CGFloat Y = arc4random()%100+1;
-    CGFloat W = arc4random()%100+1;
-    CGFloat H = arc4random()%100+1;
+    CGFloat w = arc4random()%100+1;
+    CGFloat h = arc4random()%100+1;
     
     _colorLayer.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:1].CGColor;
     
-    _colorLayer.frame = CGRectMake(X, Y, W, H);
+    _colorLayer.frame = CGRectMake(X, Y, w, h);
     
     
     [CATransaction setCompletionBlock:^{

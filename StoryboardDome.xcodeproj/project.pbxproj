@@ -85,6 +85,7 @@
 		9033C8F21DDC2B5D000666AB /* BlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockView.h; sourceTree = "<group>"; };
 		9033C8F31DDC2B5D000666AB /* BlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockView.m; sourceTree = "<group>"; };
 		9033C8F51DDC2B76000666AB /* BlockView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlockView.xib; sourceTree = "<group>"; };
+		9033C8F81DDDA200000666AB /* Ard-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ard-Prefix.pch"; sourceTree = "<group>"; };
 		903BCB3C1D6D6CC300A1A0AF /* C_bViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C_bViewController.h; sourceTree = "<group>"; };
 		903BCB3D1D6D6CC300A1A0AF /* C_bViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C_bViewController.m; sourceTree = "<group>"; };
 		905911B91DC1991D001622EB /* C_dViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C_dViewController.h; sourceTree = "<group>"; };
@@ -210,6 +211,7 @@
 		902939F51D58629B00C14290 /* base */ = {
 			isa = PBXGroup;
 			children = (
+				9033C8F81DDDA200000666AB /* Ard-Prefix.pch */,
 				902939F61D5862BD00C14290 /* BaseNavViewController.h */,
 				902939F71D5862BD00C14290 /* BaseNavViewController.m */,
 				902939F91D58639400C14290 /* BaseTBViewController.h */,
@@ -627,6 +629,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3YA54AB2B7;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StoryboardDome/Ard-Prefix.pch";
 				INFOPLIST_FILE = StoryboardDome/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -640,6 +644,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3YA54AB2B7;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StoryboardDome/Ard-Prefix.pch";
 				INFOPLIST_FILE = StoryboardDome/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

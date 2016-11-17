@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^LogBlock)(NSString* str);
+
+typedef void(^TenAfterBlock)();
+typedef void(^TenBeforeBlock)();
+
 @interface A_bViewController : UIViewController
+
+
+- (void)logStrAfterLogOther:(LogBlock)block;
+
+- (void)sumNumber:(CGFloat)num1 andNum2:(CGFloat)num2 tenBefore:(TenBeforeBlock)block1 tenAfter:(TenAfterBlock)block2;
 
 @end
