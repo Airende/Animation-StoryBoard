@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^MyBlock)(NSString *str);
 @interface A_cViewController : UIViewController
+
+- (void)pushInViewControllName:(NSString *)vcName doSomething:(MyBlock)block;
 
 @end

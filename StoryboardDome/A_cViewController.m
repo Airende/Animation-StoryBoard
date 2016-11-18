@@ -8,6 +8,7 @@
 
 #import "A_cViewController.h"
 #import "A_bViewController.h"
+#import "A_aTableViewController.h"
 
 @interface A_cViewController ()
 
@@ -31,6 +32,20 @@
     } tenAfter:^{
         NSLog(@" > 10 ");
     }];
+    
+    A_aTableViewController *aVc = [[A_aTableViewController alloc] init];
+    [aVc showInfo:@{} inView:^(NSDictionary *dic) {
+        
+        NSLog(@"展示一些东西 并 拿到数据 %@",dic);
+        
+    }];
+
+    
+}
+
+- (void)pushInViewControllName:(NSString *)vcName doSomething:(MyBlock)block{
+    
+        block(@"这是在A_c中写的文字");
     
 }
 

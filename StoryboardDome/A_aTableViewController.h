@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^ShowBlock)(NSDictionary *dic);
+
 @interface A_aTableViewController : UITableViewController
+
+- (void)showInfo:(NSDictionary *)dic inView:(ShowBlock)block;
 
 @end

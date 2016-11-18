@@ -7,6 +7,7 @@
 //
 
 #import "A_aTableViewController.h"
+#import "A_cViewController.h"
 
 @interface A_aTableViewController ()
 
@@ -19,7 +20,23 @@
     
     self.tableView.rowHeight = 100;
     self.tableView.tableFooterView = [[UIView alloc] init];
+    
+    A_cViewController *vc = [[A_cViewController alloc] init];
+    
+    [vc pushInViewControllName:@"vc" doSomething:^(NSString *str) {
+        NSLog(@"传值 是 %@",str);
+    }];
+    
+   
 
+}
+
+- (void)showInfo:(NSDictionary *)dic inView:(ShowBlock)block{
+    
+    dic = @{@"1":@"2"};
+    
+    block(dic);
+    
 }
 
 - (void)didReceiveMemoryWarning {
